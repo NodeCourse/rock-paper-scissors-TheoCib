@@ -1,17 +1,12 @@
-/*const http = require('http');
-http.createServer((request, response) => {
-    response.writeHead(200, {'Content-Type': 'text/html'});
-    response.end('Hello World');
-}).listen(3000);*/
-
 const express = require('express');
 const app = express();
+const choices = require('./skilss.json');
 app.set('view engine', 'pug');
 
 app.use(express.static("public"));
 
 app.get('/',(request, response) => {
-    response.render("home");
+    response.render("home", {choices: choices});
 });
 
 
@@ -19,9 +14,7 @@ app.get('/result',(request, response) => {
     response.render("result");
 });
 
-app.get('/result/:choice', (request, response) => {
-    
-});
+
 
 
 app.listen(3000);

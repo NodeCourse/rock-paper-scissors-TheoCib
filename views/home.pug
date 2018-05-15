@@ -1,14 +1,10 @@
 html
     head
-        title Rock Paper Ciseau
+        title Rock Paper Scissors
         link(rel="stylesheet", href="/css/css.css")
     body
-        main
-            div.img
-                a(href="/result/paper")
-                    img(src="/img/paper.png")
-                a(href="/result/rock")
-                    img(src="/img/rock.png")
-                a(href="/result/scissors")
-                    img(src="/img/scissors.png")
+       ul
+           for choice in choices
+               li
+                    a(href="/play/" + choice.id) #{choice.name}
 
